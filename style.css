@@ -52,6 +52,7 @@ body {
     height: 12px;
     border-radius: 10px 10px 0 0;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .seat:hover {
