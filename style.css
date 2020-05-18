@@ -55,8 +55,8 @@ body {
     cursor: pointer;
 }
 
-.seat:hover {
-    transform: translate3d(90px);
+.seat:not(.occupied):hover {
+    transform: scale(1.2);
 }
 
 .seat-type {

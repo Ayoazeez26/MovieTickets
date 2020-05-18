@@ -1,10 +1,11 @@
-(function(){
-    document.querySelector('.seats').addEventListener('click', selectSeat);
+// (function(){
+    // document.querySelector('.seats').addEventListener('click', selectSeat);
 
-    document.querySelector('#movies').addEventListener('click', getMoviePrice);
+    // document.querySelector('#movies').addEventListener('change', getMoviePrice);
 
-    function selectSeat (e) {
+    function selectSeat(e) {
         // ADD SELECT AND DESELECT SEAT
+        console.log(e.target);
         if(e.target.classList.contains('occupied')) {
             e.target.classList.toggle('discolored');
         }
@@ -17,8 +18,12 @@
         let seatArr = Array.from(allSelectedSeats);
         seatArr.shift();
         let pickedSeats = seatArr.length;
-        console.log(pickedSeats);        
+        // console.log(pickedSeats); 
+
+        return pickedSeats;
     }
+
+    console.log(selectSeat());
 
     // ADD TO TOTAL OF THE PRICES OF SELECTED SEATS
 
@@ -28,4 +33,4 @@
         console.log(moviePrice);
 
     }
-})();
+// })();
