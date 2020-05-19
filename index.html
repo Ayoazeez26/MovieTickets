@@ -11,12 +11,12 @@
     <section class="container">
         <div class="top-part">
             <h5>Pick a movie:</h5>
-            <select name="movies" id="movies" onchange="getMoviePrice()">
+            <select name="movies" id="movies">
                 <option value="null">Pick Movie</option>
                 <option value="10">Ford vs Ferrari ($10)</option>
                 <option value="5">Kpali ($5)</option>
                 <option value="12">Miracle in Cell No 7 ($12)</option>
-                <option value="8">Extraction ($10)</option>
+                <option value="8">Extraction ($8)</option>
             </select>
         </div>
 
@@ -37,7 +37,7 @@
 
         <div class="screen"></div>
 
-        <div class="seats" onclick="selectSeat()">
+        <div class="seats">
             <div class="seat-row row-one">
                 <div class="seat discolored"></div>
                 <div class="seat discolored"></div>
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="prices-seats"></div>
+        <p class="prices-seats"></p>
     </section>
 
     <script src="app.js"></script>
