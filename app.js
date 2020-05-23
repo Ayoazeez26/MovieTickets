@@ -2,8 +2,10 @@
     document.querySelector('.seats').addEventListener('click', selectSeat);
 
     document.querySelector('#movies').addEventListener('change', getMoviePrice);
+    
+    let output = document.querySelector('.prices-seats');
 
-    let moviePrice, pickedSeats;
+    let moviePrice, pickedSeats, HTMLOutput;
 
     function selectSeat(e) {
         // ADD SELECT AND DESELECT SEAT
@@ -20,6 +22,7 @@
         seatArr.shift();
         pickedSeats = seatArr.length;
 
+
         DOMOutput();
 
     }
@@ -28,16 +31,27 @@
     function getMoviePrice(e) {
         // SET VALUE TO USE TO CALCULATE SEAT PRICES
         moviePrice = e.target.value;
-        
+
         DOMOutput();
     }
 
+    // DOM TEMPLATE OF THE OUTPUT
+
+    HTMLOutput = `You have Selected <span class="glow">0</span> seats which cost a total of $<span class="glow">0</span>.`;
+
+    output.innerHTML = HTMLOutput;
+
+    // CALCULATE TICKET PRICE AND PRINT TO DOM
+
     function DOMOutput() {
-        let output = document.querySelector('.prices-seats');
-        let HTMLOutput = `You have Selected <span class="glow">${pickedSeats}</span> seats which cost a total of $<span class="glow">${pickedSeats * moviePrice}</span>.`;
-        if (pickedSeats == undefined) {
+        if ( pickedSeats == undefined || pickedSeats == 0) {
             pickedSeats = 0;
+        } else if(moviePrice == undefined) {
+            moviePrice = 0;
         }
+
+        HTMLOutput = `You have Selected <span class="glow">${pickedSeats}</span> seats which cost a total of $<span class="glow">${pickedSeats * moviePrice}</span>.`;
+
         output.innerHTML = HTMLOutput;
     }
 })();
